@@ -1,0 +1,30 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Actions</th>
+            <th scope="col">Avatar</th>
+            <th scope="col">Aggregation</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let mate of matesList; index as i">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{mate?.name?.first}}</td>
+            <td>{{mate?.name?.last}}</td>
+            <td>{{mate?.age}}</td>
+            <td>
+                <button mat-button color="primary" (click)="onEditClick(mate)">Edit</button>
+                <button mat-button color="primary" (click)="onDeleteClick(mate.guid)">Delete</button>
+            </td>
+            <td>
+                <img src="../../../../assets/images/avatar.png" alt="avatar">
+            </td>
+            <td>{{mate | aggregation}}</td>
+        </tr>
+    </tbody>
+</table>

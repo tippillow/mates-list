@@ -1,0 +1,25 @@
+:host {
+    display: flex;
+    justify-content: center;
+
+    background-color: white;
+}
+
+.form {
+    padding: 60px;
+}
+
+.close {
+    position: relative;
+
+    border: none;
+    background: none;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.invalid {
+    border: 1px solid red;
+}

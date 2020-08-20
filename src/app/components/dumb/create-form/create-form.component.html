@@ -1,0 +1,54 @@
+<form class="form" [formGroup]="createForm">
+    <button type="button" class="close" (click)="onCloseCLick()">x</button>
+    <div class="form-group">
+        <label class="label" for="firstName">First name</label>
+        <input
+            formControlName="firstName"
+            [class.invalid]="!createForm.controls['firstName'].valid"
+            type="text"
+            class="form-control"
+            id="firstName"
+            placeholder="First name">
+    </div>
+
+    <div class="form-group">
+        <label class="label" for="lastName">Last name</label>
+        <input
+            formControlName="lastName"
+            [class.invalid]="!createForm.controls['lastName'].valid"
+            type="text"
+            class="form-control"
+            id="lastName"
+            placeholder="Last name">
+    </div>
+
+    <div class="form-group">
+        <label class="label" for="email">Email</label>
+        <input formControlName="email"
+               [class.invalid]="!createForm.controls['email'].valid"
+               type="email"
+               class="form-control"
+               id="email"
+               placeholder="Email">
+    </div>
+
+    <div class="form-group">
+        <label class="label" for="age">Age</label>
+        <input
+            formControlName="age"
+            [class.invalid]="!createForm.controls['age'].valid"
+            type="number"
+            class="form-control"
+            id="age"
+            min="0"
+            max="120">
+    </div>
+
+    <button
+        type="button"
+        (click)="onCreateClick()"
+        mat-stroked-button
+        [disabled]="!createForm.valid">
+        Создать
+    </button>
+</form>
